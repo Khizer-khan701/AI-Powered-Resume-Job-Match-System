@@ -1,0 +1,39 @@
+#core api
+fastapi
+uvicorn
+python-multipart
+pydantic
+
+#Langchain + openai
+langchain 
+langchain-openai
+openai
+tiktoken
+
+#Document processing
+PyPDF2
+python-docx
+docx2txt
+unstructured
+
+#vector similarity
+faiss-cpu
+chromadb
+
+#AWS
+boto3
+mangum
+
+#Utilities
+numpy
+pandas
+scikit-learn
+python-dotenv
+requests
+
+#Dev/CI
+pytest
+black
+flake8
+
+-e .
