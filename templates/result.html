@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Results</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+  <div class="container">
+    <h1>Matching Results</h1>
+    
+    <p><b>Job Description:</b></p>
+    <div class="box">{{ job_description }}</div>
+
+    <h2>Resume Summary:</h2>
+    <div class="box">{{ result['summary'] }}</div>
+
+    <h2>AI Analysis:</h2>
+    <div class="box">{{ result['analysis'] }}</div>
+
+    <h2>Job Fit Points:</h2>
+    <div class="box">
+      <ul>
+        {% for point in result['fit_points'].split('\n') %}
+          {% if point.strip() %}
+            <li>{{ point }}</li>
+          {% endif %}
+        {% endfor %}
+      </ul>
+    </div>
+
+    <h2>Sources:</h2>
+    {% if result['sources'] %}
+      <ul>
+        {% for src in result['sources'].split(',') %}
+          <li>{{ src }}</li>
+        {% endfor %}
+      </ul>
+    {% else %}
+      <p>No sources found.</p>
+    {% endif %}
+
+    <a class="btn" href="/">🔄 Upload Another</a>
+  </div>
+</body>
+</html>

@@ -3,6 +3,7 @@ fastapi
 uvicorn
 python-multipart
 pydantic
+flask
 
 #Langchain + openai
 langchain 
